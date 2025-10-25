@@ -4,18 +4,209 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cancellation & Refunds | Sparsh Mukthi</title>
-  <meta name="description" content="Sparsh Mukthi Cancellation & Refunds Policy: Our cancellation and refund guidelines." />
+  <meta name="description" content="Sparsh Mukthi Cancellation & Refunds Policy: Learn about our subscription cancellation and refund process." />
   <meta name="theme-color" content="#2563eb" />
   <meta property="og:title" content="Cancellation & Refunds | Sparsh Mukthi" />
-  <meta property="og:description" content="Our cancellation and refund guidelines." />
+  <meta property="og:description" content="Learn about our subscription cancellation and refund process." />
   <meta property="og:image" content="logo1.jpg" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --text-primary: #1e293b;
+      --text-secondary: #475569;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: #e2e8f0;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background-color: var(--bg-secondary);
+      transition: background-color 0.3s ease;
+    }
+
+    body.dark-mode {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --border: #334155;
+      --shadow: rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar {
+      background-color: var(--bg-primary);
+      box-shadow: 0 2px 10px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .logo-link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .theme-toggle-btn {
+      background: var(--accent);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle-btn:hover {
+      background: var(--accent-hover);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .refund-section {
+      background: var(--bg-primary);
+      border-radius: 12px;
+      padding: 3rem;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .refund-date {
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    h3 {
+      color: var(--accent);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.7rem;
+      color: var(--text-secondary);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    body.dark-mode .highlight-box {
+      background: #422006;
+      border-left-color: #f59e0b;
+    }
+
+    .footer-refund {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+      background: var(--bg-primary);
+      margin-top: 3rem;
+    }
+
+    .footer-refund a {
+      color: var(--accent);
+      font-weight: 500;
+    }
+  </style>
 </head>
-<body class="preload">
-  <!-- Navbar -->
+<body>
   <header id="navbar">
     <nav class="navbar">
       <div class="logo">
@@ -34,91 +225,142 @@
     </nav>
   </header>
   <main>
-    <section class="privacy-section" aria-labelledby="policy-title">
-      <div class="privacy-container">
-        <h2 id="policy-title" class="section-title">Cancellation & Refunds Policy</h2>
-        <p class="privacy-date"><strong>Effective Date:</strong> May 13, 2025</p>
-        <p>At <strong>Sparsh Mukthi</strong>, we want you to be completely satisfied with your purchase. This policy outlines our guidelines for cancellations and refunds.</p>
-        <hr>
-        
-        <h3>1. Free Trial & Subscription Plans</h3>
-        <ul>
-          <li><strong>Free Trial:</strong> New users receive a 2-month free trial with an additional 2 bonus months. No payment is required during this period.</li>
-          <li><strong>Subscription Plans:</strong> After the trial period, users can choose between:
-            <ul style="margin-top: 0.5rem;">
-              <li>₹100 for single-user plan (monthly)</li>
-              <li>₹149 for dual-user plan (monthly)</li>
-            </ul>
-          </li>
-          <li>Subscriptions auto-renew monthly unless canceled before the renewal date.</li>
-        </ul>
+    <section class="refund-section" aria-labelledby="refund-title">
+      <h2 id="refund-title" class="section-title">Cancellation & Refunds</h2>
+      <p class="refund-date"><strong>Effective Date:</strong> January 1, 2025</p>
+      <p>At <strong>Sparsh Mukthi</strong>, we strive to provide the best touchless control experience. This policy outlines our cancellation and refund procedures for subscription services.</p>
+      <hr>
+      
+      <h3>1. Free Trial Period</h3>
+      <ul>
+        <li>New users receive a <strong>4-month free trial</strong> (2 months + 2 bonus months) with full access to all features.</li>
+        <li>You can cancel anytime during the trial period without any charges.</li>
+        <li>No credit card is required to start the free trial.</li>
+        <li>If you cancel during the trial, you retain access until the trial period ends.</li>
+      </ul>
 
-        <h3>2. Cancellation Policy</h3>
-        <ul>
-          <li><strong>During Free Trial:</strong> You can cancel anytime during the free trial period without any charges.</li>
-          <li><strong>After Subscription Starts:</strong> You may cancel your subscription at any time through your account settings or by contacting us at <a href="mailto:support@sparshmukthi.com">support@sparshmukthi.com</a>.</li>
-          <li><strong>Access After Cancellation:</strong> Once canceled, you will retain access to premium features until the end of your current billing period.</li>
-          <li><strong>No Partial Refunds:</strong> If you cancel mid-cycle, you will not receive a refund for the remaining days of that billing period.</li>
-        </ul>
+      <h3>2. Subscription Cancellation</h3>
+      <ul>
+        <li>You can cancel your subscription at any time through your account settings or by contacting support at <a href="mailto:support@sparshmukthi.com">support@sparshmukthi.com</a>.</li>
+        <li>Cancellations take effect at the end of the current billing cycle.</li>
+        <li>You will continue to have access to Sparsh Mukthi until the end of the paid period.</li>
+        <li>After cancellation, your subscription will not auto-renew, and you will not be charged further.</li>
+      </ul>
 
-        <h3>3. Refund Policy</h3>
-        <ul>
-          <li><strong>7-Day Money-Back Guarantee:</strong> If you're not satisfied with Sparsh Mukthi within the first 7 days of your paid subscription, you can request a full refund.</li>
-          <li><strong>Refund Eligibility:</strong>
-            <ul style="margin-top: 0.5rem;">
-              <li>Valid only for first-time subscribers</li>
-              <li>Must be requested within 7 days of initial payment</li>
-              <li>Does not apply to renewals</li>
-            </ul>
-          </li>
-          <li><strong>How to Request a Refund:</strong> Email us at <a href="mailto:support@sparshmukthi.com">support@sparshmukthi.com</a> with your account details and reason for refund.</li>
-          <li><strong>Processing Time:</strong> Refunds are processed within 5-7 business days and will be credited to the original payment method.</li>
-        </ul>
-
-        <h3>4. Non-Refundable Items</h3>
-        <ul>
-          <li>Subscription renewals after the first billing cycle</li>
-          <li>Payments made more than 7 days ago</li>
-          <li>Bonus months or promotional periods</li>
-          <li>Add-on features purchased separately</li>
-        </ul>
-
-        <h3>5. Technical Issues</h3>
-        <ul>
-          <li>If you experience technical problems that prevent normal use of Sparsh Mukthi, please contact our support team immediately.</li>
-          <li>We will work to resolve the issue promptly. If we cannot fix the problem within 72 hours, we may offer a pro-rated refund or extend your subscription.</li>
-        </ul>
-
-        <h3>6. Abuse Prevention</h3>
-        <ul>
-          <li>We reserve the right to deny refund requests that appear fraudulent or abusive.</li>
-          <li>Repeated refund requests may result in account termination.</li>
-          <li>Chargebacks initiated without contacting us first will result in permanent account suspension.</li>
-        </ul>
-
-        <h3>7. Changes to Services</h3>
-        <ul>
-          <li>If we make significant changes to Sparsh Mukthi that negatively impact core functionality, existing subscribers will be notified 30 days in advance.</li>
-          <li>You may cancel your subscription and request a pro-rated refund if you disagree with the changes.</li>
-        </ul>
-
-        <h3>8. Contact Us for Cancellations or Refunds</h3>
-        <p>For any questions or requests related to cancellations or refunds, please reach out:</p>
-        <p><strong>Email:</strong> <a href="mailto:support@sparshmukthi.com">support@sparshmukthi.com</a><br>
-        <strong>Website:</strong> <a href="https://www.sparsh-mukthi.xyz">www.sparsh-mukthi.xyz</a><br>
-        <strong>WhatsApp:</strong> +91 92632 25604<br>
-        <a href="index.html#contact">Go to Contact Page</a></p>
-
-        <h3>9. Policy Updates</h3>
-        <p>We may update this Cancellation & Refunds Policy periodically. All changes will be posted on this page with an updated "Effective Date." For significant changes, we will notify users via email.</p>
-        <hr>
-        <p><em>Thank you for choosing Sparsh Mukthi. We're committed to providing you with the best touchless control experience.</em></p>
+      <div class="highlight-box">
+        <strong>Important:</strong> Canceling your subscription does not automatically qualify you for a refund. Please review our refund policy below.
       </div>
+
+      <h3>3. Refund Policy</h3>
+      <p>We offer refunds under the following conditions:</p>
+
+      <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-top: 1.5rem;">3.1 7-Day Money-Back Guarantee</h4>
+      <ul>
+        <li>If you're not satisfied with Sparsh Mukthi, you can request a <strong>full refund within 7 days</strong> of your first paid subscription charge.</li>
+        <li>This applies only to your first paid subscription (after the free trial).</li>
+        <li>To request a refund, contact us at <a href="mailto:support@sparshmukthi.com">support@sparshmukthi.com</a> with your order details.</li>
+      </ul>
+
+      <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-top: 1.5rem;">3.2 Technical Issues</h4>
+      <ul>
+        <li>If you experience technical problems that prevent you from using Sparsh Mukthi and our support team is unable to resolve the issue within 14 days, you may be eligible for a prorated refund.</li>
+        <li>You must report technical issues promptly and allow our team reasonable time to address them.</li>
+      </ul>
+
+      <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-top: 1.5rem;">3.3 Billing Errors</h4>
+      <ul>
+        <li>If you were charged incorrectly or multiple times due to a billing error, we will refund the erroneous charges immediately.</li>
+        <li>Please contact us within 30 days of the charge with proof of the billing error.</li>
+      </ul>
+
+      <h3>4. Non-Refundable Situations</h3>
+      <p>Refunds will <strong>not</strong> be provided in the following cases:</p>
+      <ul>
+        <li>Cancellations made after the 7-day money-back guarantee period.</li>
+        <li>Partial month refunds (if you cancel mid-cycle, you keep access until the end of the billing period).</li>
+        <li>Renewal charges if you did not cancel before the renewal date.</li>
+        <li>If you violate our Terms and Conditions, resulting in account termination.</li>
+        <li>Change of mind after actively using the service beyond the refund period.</li>
+        <li>Incompatibility with your device if it does not meet our published system requirements.</li>
+      </ul>
+
+      <h3>5. How to Request a Refund</h3>
+      <p>To request a refund, follow these steps:</p>
+      <ul>
+        <li><strong>Step 1:</strong> Email us at <a href="mailto:support@sparshmukthi.com">support@sparshmukthi.com</a> with the subject line "Refund Request".</li>
+        <li><strong>Step 2:</strong> Include your account email, order/transaction ID, and reason for the refund request.</li>
+        <li><strong>Step 3:</strong> Our support team will review your request within 3-5 business days.</li>
+        <li><strong>Step 4:</strong> If approved, refunds will be processed to your original payment method within 7-10 business days.</li>
+      </ul>
+
+      <h3>6. Refund Processing Time</h3>
+      <ul>
+        <li>Approved refunds are processed within <strong>7-10 business days</strong>.</li>
+        <li>The time it takes for the refund to appear in your account depends on your bank or payment provider (typically 5-10 business days).</li>
+        <li>You will receive an email confirmation once the refund has been initiated.</li>
+      </ul>
+
+      <h3>7. Promotional Offers & Discounts</h3>
+      <ul>
+        <li>If you subscribed using a promotional code or discount, the refund amount will reflect the actual amount paid, not the original price.</li>
+        <li>Promotional codes and bonuses (e.g., reward points, coupons) are non-refundable once redeemed.</li>
+      </ul>
+
+      <h3>8. Auto-Renewal & Prevention</h3>
+      <ul>
+        <li>Subscriptions automatically renew at the end of each billing cycle unless canceled.</li>
+        <li>You will receive an email reminder <strong>7 days before</strong> your subscription renews.</li>
+        <li>To avoid unwanted charges, cancel your subscription before the renewal date.</li>
+        <li>We are not responsible for charges incurred if you fail to cancel before auto-renewal.</li>
+      </ul>
+
+      <h3>9. Account Deletion</h3>
+      <ul>
+        <li>If you delete your account, any active subscription will be canceled immediately.</li>
+        <li>Deleting your account does not automatically trigger a refund. Please request a refund separately if eligible.</li>
+        <li>Once deleted, your account data cannot be recovered.</li>
+      </ul>
+
+      <h3>10. Changes to This Policy</h3>
+      <p>We reserve the right to modify this Cancellation & Refunds Policy at any time. Changes will be posted on this page with an updated "Effective Date." Continued use of Sparsh Mukthi after changes constitutes acceptance of the updated policy.</p>
+
+      <h3>11. Contact Us</h3>
+      <p>If you have questions or need assistance with cancellations or refunds, please contact us:</p>
+      <p><strong>Email:</strong> <a href="mailto:support@sparshmukthi.com">support@sparshmukthi.com</a><br>
+      <strong>Website:</strong> <a href="https://www.sparsh-mukthi.xyz">www.sparsh-mukthi.xyz</a><br>
+      <a href="index.html#contact">Go to Contact Page</a></p>
+
+      <hr>
+      <p><em>We appreciate your trust in Sparsh Mukthi and are committed to ensuring a fair and transparent refund process.</em></p>
     </section>
   </main>
-  <footer class="footer-privacy">
+  <footer class="footer-refund">
     &copy; 2025 Sparsh Mukthi, a product of <a href="https://intellikat.com" target="_blank">IntelliKat</a>. All rights reserved.
   </footer>
-  <script src="js/privacy.js"></script>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+
+    // Check for saved theme preference
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+      body.classList.add('dark-mode');
+      themeIcon.textContent = '☀️';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 </body>
 </html>
