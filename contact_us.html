@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Sparsh Mukthi</title>
+  <meta name="description" content="Get in touch with the Sparsh Mukthi team. We're here to help with any questions or concerns." />
+  <meta name="theme-color" content="#2563eb" />
+  <meta property="og:title" content="Contact Us | Sparsh Mukthi" />
+  <meta property="og:description" content="Get in touch with the Sparsh Mukthi team." />
+  <meta property="og:image" content="logo1.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="preload">
+  <!-- Navbar -->
+  <header id="navbar">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <img src="logo1.jpg" alt="Sparsh Mukthi circular logo" height="40" />
+          <span style="margin-left:0.5rem;">Sparsh Mukthi</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#download">Download</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light and dark theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+    </nav>
+  </header>
+  <main>
+    <section id="contact" class="section contact-main">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">We'd love to hear from you. Let us know how we can help!</p>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Email:</strong> <a href="mailto:sparsh.mukthi@gmail.com">sparsh.mukthi@gmail.com</a></p>
+            <p><strong>Support Email:</strong> <a href="mailto:support@sparshmukthi.com">support@sparshmukthi.com</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/919263225604">+91 92632 25604</a></p>
+            <p><strong>Address:</strong> IntelliKat, Bengaluru, Karnataka, India</p>
+            
+            <h3 style="margin-top: 2rem;">Business Hours</h3>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
+            <p>Saturday: 10:00 AM - 4:00 PM IST</p>
+            <p>Sunday: Closed</p>
+            
+            <h3 style="margin-top: 2rem;">Follow Us</h3>
+            <div class="social-links">
+              <a href="https://github.com/keshav-kr-agrawal/SM_web" class="social-link" target="_blank">GitHub</a>
+              <a href="#" class="social-link" target="_blank">LinkedIn</a>
+              <a href="#" class="social-link" target="_blank">Instagram</a>
+            </div>
+            
+            <h3 style="margin-top: 2rem;">Quick Links</h3>
+            <p><a href="privacy.html" style="color: var(--primary); text-decoration: underline;">Privacy Policy</a></p>
+            <p><a href="terms.html" style="color: var(--primary); text-decoration: underline;">Terms & Conditions</a></p>
+            <p><a href="cancellation.html" style="color: var(--primary); text-decoration: underline;">Cancellation & Refunds</a></p>
+            <p><a href="shipping.html" style="color: var(--primary); text-decoration: underline;">Shipping Policy</a></p>
+          </div>
+          <form class="contact-form" id="contactForm" autocomplete="off">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number (Optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <input type="text" id="subject" name="subject" required placeholder="How can we help you?">
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Tell us more about your inquiry..."></textarea>
+            </div>
+            <button type="submit" class="cta-btn primary">Send Message</button>
+            <div id="form-status"></div>
+            <div style="margin-top:1.2rem;text-align:center;color:var(--muted);font-size:0.95rem;">
+              We typically respond within 24-48 hours during business days.
+            </div>
+          </form>
+        </div>
+        
+        <div style="margin-top: 4rem; text-align: center; background: var(--secondary); padding: 2rem; border-radius: 16px;">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">Frequently Asked Questions</h3>
+          <p style="color: var(--text); margin-bottom: 1rem;">Looking for quick answers? Check out our <a href="index.html#faqs" style="color: var(--primary); text-decoration: underline;">FAQ section</a> on the homepage.</p>
+          <p style="color: var(--muted);">For technical support, installation help, or feature requests, please email us with detailed information about your device and operating system.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer-privacy">
+    &copy; 2025 Sparsh Mukthi, a product of <a href="https://intellikat.com" target="_blank">IntelliKat</a>. All rights reserved.
+  </footer>
+  <script src="js/privacy.js"></script>
+  <script>
+    // Contact form handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formStatus = document.getElementById('form-status');
+      formStatus.textContent = 'Sending message...';
+      formStatus.style.color = 'var(--accent)';
+      
+      // Simulate form submission (replace with actual form handling)
+      setTimeout(() => {
+        formStatus.textContent = '✓ Message sent successfully! We\'ll get back to you soon.';
+        formStatus.style.color = '#10b981';
+        document.getElementById('contactForm').reset();
+        
+        setTimeout(() => {
+          formStatus.textContent = '';
+        }, 5000);
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

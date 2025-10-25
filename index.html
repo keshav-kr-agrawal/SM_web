@@ -13,6 +13,105 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
+  
+  <!-- Styles for the Responsive Navbar -->
+  <style>
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 2rem;
+      height: 2rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+    .hamburger .bar {
+      height: 3px;
+      width: 100%;
+      background-color: var(--text);
+      border-radius: 10px;
+      transition: all 0.3s ease-in-out;
+    }
+    /* Responsive styles for screens smaller than 900px */
+    @media (max-width: 900px) {
+      .hamburger {
+        display: flex;
+        order: 2; /* Position it after the logo */
+      }
+      .theme-toggle-btn {
+        order: 3; /* Position theme toggle after hamburger */
+      }
+      .nav-links {
+        position: absolute;
+        top: 72px; /* Adjust based on navbar height */
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: var(--secondary);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+      .nav-links.active {
+        max-height: 500px; /* Animate open */
+        padding: 1rem 0;
+      }
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+      }
+      .nav-links a {
+        display: block;
+        padding: 1rem;
+        width: 100%;
+      }
+      /* Animation for hamburger to 'X' icon */
+      .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(0.5rem, 0.5rem);
+      }
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+      }
+      /* Ensure logo stays on the left */
+      .navbar {
+        justify-content: space-between;
+      }
+      .navbar .logo {
+        order: 1;
+      }
+    }
+    /* Adjustments for very small screens where navbar stacks */
+    @media (max-width: 600px) {
+      .navbar {
+        justify-content: center; /* Center the logo when navbar stacks */
+        position: relative; /* Needed for absolute positioning of buttons */
+      }
+      .nav-links {
+        top: 110px; /* Adjust for taller stacked navbar */
+      }
+      .hamburger, .theme-toggle-btn {
+        position: absolute;
+        top: 1rem;
+      }
+      .hamburger {
+        right: 5rem;
+      }
+      .theme-toggle-btn {
+        right: 1rem;
+      }
+    }
+  </style>
 </head>
 <body class="preload">
   <!-- Navbar -->
@@ -22,7 +121,7 @@
         <img src="logo1.jpg" alt="Sparsh Mukthi circular logo" height="40" />
         <span style="margin-left:0.5rem;">Sparsh Mukthi</span>
       </div>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links-menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#user-guide">User Guide</a></li>
@@ -30,6 +129,12 @@
         <li><a href="#developers">Developers</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <!-- Hamburger Menu Button -->
+      <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
       <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light and dark theme">
         <span id="theme-icon">🌙</span>
       </button>
@@ -44,7 +149,7 @@
         <p class="tagline">Embracing Touchless Technology</p>
         <div class="hero-buttons">
           <a href="#download" class="cta-btn">Download App</a>
-          <a href="#tutorials" class="cta-btn">Demo</a>
+          <a href="https://gesture-browser-control.vercel.app/" class="cta-btn">Demo</a>
         </div>
         <p class="intro">Sparsh Mukthi empowers users with touchless control using gestures, voice, and head tracking, making technology accessible for all.</p>
         <div class="social-media-home">
@@ -345,12 +450,15 @@
           <a href="#developers">Developers</a>
           <a href="#contact">Contact</a>
           <a href="privacy.html">Privacy Policy</a>
+          <a href="shipping.html">Shipping</a>
+          <a href="cancellation_refund.html">Cancellations</a>
         </div>
         <div class="footer-col">
           <h4>Community</h4>
           <a href="https://github.com/yourrepo" target="_blank">GitHub</a>
           <a href="#">MIT License</a>
           <a href="#">Discord (soon)</a>
+          <a href="terms.html">Terms</a>
         </div>
         <div class="footer-col">
           <h4>Connect</h4>
@@ -358,6 +466,7 @@
           <a href="https://intellikat.com" target="_blank">IntelliKat (Company)</a>
           <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
           <a href="https://linkedin.com/company/yourhandle" target="_blank">LinkedIn</a>
+          <a href="contact_us.html" target="_blank">Contact us</a>
         </div>
       </div>
     </div>
@@ -366,14 +475,14 @@
 
   <script src="js/main.js"></script>
   <!-- Floating WhatsApp Icon -->
-  <a href="https://wa.me/919263225604?text=Hi%20Sparsh%20Mukthi%20Team!" class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+  <!-- <a href="https://wa.me/919263225604?text=Hi%20Sparsh%20Mukthi%20Team!" class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
     <span class="wa-icon">
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="16" cy="16" r="16" fill="#25D366"/>
         <path d="M22.1 9.9c-1.4-1.4-3.3-2.2-5.3-2.2-4.1 0-7.5 3.3-7.5 7.5 0 1.3.3 2.5.9 3.6l-1 3.7 3.8-1c1 .5 2.1.8 3.2.8h.1c4.1 0 7.5-3.3 7.5-7.5 0-2-.8-3.9-2.2-5.3zm-5.3 13.1c-1 0-2-.2-2.9-.7l-.2-.1-2.2.6.6-2.1-.1-.2c-.6-1-.9-2.1-.9-3.2 0-3.4 2.8-6.2 6.2-6.2 1.7 0 3.2.6 4.4 1.8 1.2 1.2 1.8 2.7 1.8 4.4 0 3.4-2.8 6.2-6.2 6.2zm3.4-4.7c-.2-.1-1.2-.6-1.3-.7-.2-.1-.3-.1-.5.1-.1.2-.5.7-.6.8-.1.1-.2.2-.4.1-.2-.1-.8-.3-1.5-.9-.6-.5-1-1.2-1.1-1.3-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.3.1-.1.1-.2.1-.3 0-.1 0-.2-.1-.3-.1-.1-.2-.2-.3-.3-.1-.1-.2-.1-.3-.1-.1 0-.2 0-.3.1-.1.1-.7.7-.7 1.7 0 1 .7 2 1.1 2.4.4.4 1.5 1.2 2.3 1.5.3.1.5.1.7.1.2 0 .5 0 .7-.3.2-.3.7-.7.7-.9 0-.1 0-.2-.1-.3z" fill="#fff"/>
       </svg>
     </span>
-  </a>
+  </a> -->
 <script>
 // FAQ Accordion Toggle
 document.querySelectorAll('.faq-toggle').forEach(btn => {
@@ -381,17 +490,46 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
     const card = btn.closest('.faq-card');
     const answer = card.querySelector('.faq-answer');
     const icon = btn.querySelector('.faq-icon');
-    const isOpen = !answer.classList.contains('hidden');
-    // Close all
-    document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
-    document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
-    // Open this one if not already open
-    if (!isOpen) {
-      answer.classList.remove('hidden');
-      icon.textContent = '–';
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    
+    // Set all to closed state first
+    document.querySelectorAll('.faq-toggle').forEach(otherBtn => {
+        otherBtn.setAttribute('aria-expanded', 'false');
+        otherBtn.closest('.faq-card').querySelector('.faq-answer').classList.add('hidden');
+        otherBtn.querySelector('.faq-icon').textContent = '+';
+    });
+
+    // Toggle the clicked one
+    if (!isExpanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        answer.classList.remove('hidden');
+        icon.textContent = '–';
     }
   });
+});
+
+// JavaScript for Responsive Navbar
+const hamburgerMenu = document.getElementById('hamburger-menu');
+const navLinksMenu = document.getElementById('nav-links-menu');
+
+hamburgerMenu.addEventListener('click', () => {
+    const isExpanded = hamburgerMenu.getAttribute('aria-expanded') === 'true';
+    hamburgerMenu.setAttribute('aria-expanded', !isExpanded);
+    hamburgerMenu.classList.toggle('active');
+    navLinksMenu.classList.toggle('active');
+});
+
+// Close the mobile menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinksMenu.classList.contains('active')) {
+            hamburgerMenu.setAttribute('aria-expanded', 'false');
+            hamburgerMenu.classList.remove('active');
+            navLinksMenu.classList.remove('active');
+        }
+    });
 });
 </script>
 </body>
 </html>
+
